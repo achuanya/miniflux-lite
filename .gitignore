@@ -8,3 +8,5 @@
 /miniflux-lite
 /miniflux-lite.exe
 *.exe
+
+.claude/
