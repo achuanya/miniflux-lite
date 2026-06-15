@@ -1,0 +1,10 @@
+# 环境变量（含密钥），禁止提交
+.env
+
+# 输出数据目录
+/data/
+
+# 编译产物
+/miniflux-lite
+/miniflux-lite.exe
+*.exe
