@@ -158,7 +158,7 @@ func buildItem(ctx context.Context, apiClient *api.Client, logger *zap.Logger, t
 		URL:         entry.URL,
 		Title:       entry.Title,
 		PublishedAt: entry.Date.Format(time.RFC3339),
-		Author:      resolveAuthor(entry.Author, t.feed.Title),
+		Author:      t.feed.Title,
 		Avatar:      resolveAvatar(ctx, apiClient, logger, t.feed),
 	}
 
@@ -168,14 +168,6 @@ func buildItem(ctx context.Context, apiClient *api.Client, logger *zap.Logger, t
 		zap.String("url", item.URL),
 	)
 	return item, true
-}
-
-// resolveAuthor 解析作者昵称：条目自带作者优先，为空则回退为订阅源标题。
-func resolveAuthor(entryAuthor, feedTitle string) string {
-	if a := strings.TrimSpace(entryAuthor); a != "" {
-		return a
-	}
-	return feedTitle
 }
 
 // resolveAvatar 解析作者头像：

@@ -12,6 +12,6 @@ type FeedItem struct {
 	URL         string `json:"url"`          // 文章 URL：文章的原始链接
 	Title       string `json:"title"`        // 文章标题
 	PublishedAt string `json:"published_at"` // 文章时间：发布时间，RFC3339 格式
-	Author      string `json:"author"`       // 作者昵称
+	Author      string `json:"author"`       // 订阅源标题（作为昵称）
 	Avatar      string `json:"avatar"`       // 作者头像：URL 或 base64 data URI
 }
